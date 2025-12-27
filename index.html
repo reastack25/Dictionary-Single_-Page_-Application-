@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A dictionary Single Page Application that provides definitions, pronunciations, and synonyms for English words.">
+    <title>Word Explorer | Dictionary SPA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header role="banner">
+            <h1><i class="book-open" aria-hidden="true"></i> Word Explorer</h1>
+            <p class="subtitle">Look up definitions, pronunciations, and synonyms for any English word</p>
+        </header>
+
+        <!-- SEARCH SECTION -->
+        <section class="search-section" aria-labelledby="search-heading">
+            <h2 id="search-heading" class="sr-only">Search for a word</h2>
+            
+            <form id="search-form" class="search-container" role="search" aria-label="Dictionary search">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Enter a word (e.g., 'today', 'happiness', 'web development')"
+                    aria-label="Word to search for"
+                    aria-required="true"
+                >
+                <button 
+                    type="submit" 
+                    id="search-btn"
+                    aria-label="Search for word"
+                >
+                    <i class="search" aria-hidden="true"></i>
+                    Search
+                </button>
+            </form>
+            
+            <div class="examples" role="region" aria-label="Example words">
+                <span class="sr-only">Try searching for:</span>
+                <span class="example-word" tabindex="0" role="button" aria-label="Search for hello">hello</span> • 
+                <span class="example-word" tabindex="0" role="button" aria-label="Search for beautiful">beautiful</span> • 
+                <span class="example-word" tabindex="0" role="button" aria-label="Search for perseverance">perseverance</span> •
+            </div>
+            
+            <div class="error-message" id="error-message" role="alert" aria-live="assertive">
+                <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                <span id="error-text"></span>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT -->
+        <main class="content" role="main">
+            <!-- RESULTS SECTION -->
+            <article class="card" id="results-card" aria-labelledby="results-heading">
+                <div class="card-title">
+                    <i class="search" aria-hidden="true"></i>
+                    <h2 id="results-heading">Word Details</h2>
+                </div>
+                
+                <!-- Loading State -->
+                <div class="loading" id="loading" role="status" aria-live="polite" aria-label="Loading word data">
+                    <div class="spinner" aria-hidden="true"></div>
+                    <p>Looking up word...</p>
+                </div>
+                
+                <!-- Dynamic Results Content -->
+                <div id="results-content" aria-live="polite">
+                    <div class="empty-state">
+                        <i class="book-open" aria-hidden="true"></i>
+                        <h3>Word Details Will Appear Here</h3>
+                        <p>Enter a word in the search box above to see its pronunciation, definitions, and synonyms.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- HISTORY SECTION -->
+            <aside class="card" id="history-card" aria-labelledby="history-heading">
+                <div class="card-title">
+                    <i class="history" aria-hidden="true"></i>
+                    <h2 id="history-heading">Search History</h2>
+                </div>
+                
+                <ul class="history-list" id="history-list" aria-label="Previously searched words">
+                    <!-- History items will be dynamically added -->
+                </ul>
+            </aside>
+        </main>
+
+        <!-- FOOTER -->
+        <footer role="contentinfo">
+            <p><span id="current-year"></span>  Dictionary Single Page Application</p>
+            <p class="api-credit">
+                Powered by the <a href="https://dictionaryapi.dev/" target="_blank" rel="noopener noreferrer">Free Dictionary API</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
