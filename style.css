@@ -256,7 +256,7 @@ h1 {
 
 .audio-btn {
     background: linear-gradient(135deg, var(--success), #0ea4e918);
-    color: rgba(255, 255, 255, 0.082);
+    color: rgba(255, 255, 255, 0.623);
     border: none;
     width: 48px;
     height: 48px;

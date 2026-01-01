@@ -156,7 +156,7 @@ function displayWordData(wordData) {
     
     if (phoneticText) {
         phonetic.innerHTML = `
-            <i class="volume-up" aria-hidden="true"></i>
+            <i class="fas fa-volume-up" aria-hidden="true"></i>
             <span>${phoneticText}</span>
         `;
     }
@@ -175,7 +175,7 @@ function displayWordData(wordData) {
     const audioButton = document.createElement('button');
     audioButton.className = 'audio-btn';
     audioButton.setAttribute('aria-label', `Play pronunciation of ${wordData.word}`);
-    audioButton.innerHTML = '<i class="play" aria-hidden="true"></i>';
+    audioButton.innerHTML = '<i class="fas fa-play" aria-hidden="true"></i>';
     
     if (audioUrl) {
         audioButton.addEventListener('click', () => playAudio(audioUrl, audioButton));
@@ -213,7 +213,7 @@ function displayWordData(wordData) {
     attribution.style.fontSize = '0.9rem';
     attribution.style.color = 'var(--gray)';
     attribution.innerHTML = `
-        <i class="info-circle" aria-hidden="true"></i>
+        <i class="fas fa-info-circle" aria-hidden="true"></i>
         Data provided by the <a href="https://dictionaryapi.dev/" target="_blank" rel="noopener noreferrer">Free Dictionary API</a>
     `;
     resultsContent.appendChild(attribution);
@@ -303,7 +303,7 @@ function createMeaningSection(meaning, index) {
 function displayEmptyState() {
     resultsContent.innerHTML = `
         <div class="empty-state">
-            <i class="search" aria-hidden="true"></i>
+            <i class="fas fa-search" aria-hidden="true"></i>
             <h3>No Results Found</h3>
             <p>Try searching for a different word or check your spelling.</p>
             <p style="margin-top: 10px; font-size: 0.9rem;">
@@ -403,7 +403,7 @@ function updateHistoryDisplay() {
     if (searchHistory.length === 0) {
         historyList.innerHTML = `
             <li class="empty-state" style="padding: 30px 20px;">
-                <i class="history" aria-hidden="true"></i>
+                <i class="fas fa-history" aria-hidden="true"></i>
                 <h3>No Search History</h3>
                 <p>Words you search will appear here for quick access.</p>
             </li>
